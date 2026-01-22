@@ -1,17 +1,18 @@
-/*const fileOps = require("./Question1");
+/*// Exercise 1
+const fileOps = require("./FileOperation");
 
-// Exercise 1
 fileOps.readFile();
 fileOps.countWords();
-const stringUtils = require("./CustomModule");
 
 // Exercise 2
+const stringUtils = require("./CustomModule");
+
 console.log(stringUtils.capitalize("hello world"));
 console.log(stringUtils.reverseString("nodejs"));
 console.log("Vowels:", stringUtils.countVowels("JavaScript"));*/
 
+// Exercise 3
 const logSystemInfo = require("./SystemLogger");
 
-// Exercise 3
 logSystemInfo();
 
