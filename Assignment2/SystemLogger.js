@@ -13,7 +13,7 @@ Platform: ${os.platform()}
             if (err) throw err;
             console.log("System info logged");
         });
-    }, 5000);
+    }, 6000);
 }
 module.exports = logSystemInfo;
 
