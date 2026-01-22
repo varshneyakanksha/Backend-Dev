@@ -1,14 +1,12 @@
-// Capitalize string
 function capitalize(str) {
     return str.toUpperCase();
 }
 
-// Reverse string
 function reverseString(str) {
     return str.split("").reverse().join("");
 }
 
-// Count vowels
+
 function countVowels(str) {
     let vowels = "aeiouAEIOU";
     let count = 0;
@@ -21,7 +19,6 @@ function countVowels(str) {
     return count;
 }
 
-// Export functions
 module.exports = {
     capitalize,
     reverseString,
