@@ -1,6 +1,5 @@
 let fs = require("fs");
 
-// read
 function readFile() {
     fs.readFile("a.txt", "utf-8", (err, data) => {
         if (err) throw err;
@@ -9,7 +8,6 @@ function readFile() {
     });
 }
 
-// count
 function countWords() {
     fs.readFile("a.txt", "utf-8", (err, data) => {
         if (err) throw err;
@@ -19,7 +17,6 @@ function countWords() {
 
         console.log("Total words:", count);
 
-        // write
         fs.writeFile("output.txt", "Total words: " + count, (err) => {
             if (err) throw err;
             console.log("Result written successfully");
@@ -27,7 +24,6 @@ function countWords() {
     });
 }
 
-// export functions
 module.exports = {
     readFile,
     countWords
