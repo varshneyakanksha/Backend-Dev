@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Akanksha",
+    "email": "varshneyakanksha05@gmail.com",
+    "password": "12345",
+    "todo": [
+      {
+        "createtime": "2026-01-28T05:38:36.460Z",
+        "task": "Learn Node.js",
+        "status": false
+      }
+    ]
+  }
+]
