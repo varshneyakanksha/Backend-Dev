@@ -1,0 +1,59 @@
+//Ques)Difference between Synchronous and Asynchronous File Operations
+Ans - Synchronous File Operations
+Synchronous operations execute one task at a time.
+The program waits until the file operation is completed.
+Execution is blocked until the task finishes.
+It is slower for large files.
+Mostly used for small programs or learning purposes.
+
+Asynchronous File Operations
+Asynchronous operations do not block program execution.
+The program continues running while the file operation happens in the background.
+Once the task is completed, a callback function is called.
+It is faster and better for large files.
+Used in real-world and production applications.
+
+//Ques)When should you use file streams instead of reading the entire file?
+Ans - File streams should be used when working with large files. Reading the entire file at once can consume a lot of memory and may slow down or crash the program.
+Streams read data in small chunks, which helps in saving memory and improving performance. They are especially useful when handling logs, videos, large text files, or data transfer operations.
+File streams are also preferred when we need to process data continuously, such as reading a file line by line or copying large files.
+
+//Ques)Explain the purpose of the ‘utf8’ encoding parameter in file operations.
+Ans - The utf8 encoding is used to read or write file data as readable text. It converts file content into a string format instead of binary data. This makes the data easy to understand and process. It also supports special characters and different languages.
+Example:
+With utf8 → file content is read as normal text
+Without utf8 → file content is read as binary buffer
+
+//Ques)What are the common error codes in file system operations and what do they mean?
+Ans - ENOENT – This error occurs when a file or directory does not exist at the given path.
+EACCES – This error means permission is denied and the user does not have access to the file or directory.
+EEXIST – This error occurs when trying to create a file or directory that already exists.
+EPERM – This error indicates that the operation is not permitted by the operating system.
+ENOTDIR – This error occurs when a path is expected to be a directory but it is a file.
+EISDIR – This error occurs when an operation meant for a file is attempted on a directory.
+EMFILE – This error means too many files are open at the same time.
+
+//Ques)How would you safely delete a directory with all its contents?
+Ans - To safely delete a directory with all its contents, we should first check if the directory exists and ensure we have the required permissions. Then, we should delete all files and subdirectories inside it before removing the main directory.
+In Node.js, this can be done using built-in file system methods that remove the directory recursively, which prevents errors and ensures everything is deleted properly.
+Proper error handling should always be used to avoid accidental data loss.
+
+//Ques)Explain the concept of piping in streams with an example.
+Ans - Piping in streams means connecting the output of one stream directly to the input of another stream. It allows data to flow automatically from one stream to another without storing the entire data in memory.
+Piping is mainly used to handle large files efficiently because data is transferred in small chunks.
+const fs = require("fs");
+
+const readStream = fs.createReadStream("source.txt");
+const writeStream = fs.createWriteStream("destination.txt");
+
+readStream.pipe(writeStream);
+
+//Ques)Why is it important to handle errors in file operations?
+Ans - Handling errors in file operations is important to prevent the program from crashing unexpectedly. Errors can occur due to missing files, permission issues, or incorrect paths. Proper error handling helps identify problems, display meaningful messages, and ensure the program continues to run safely without data loss.
+
+//Ques)What is the difference between writeFile and appendFile methods?
+Ans - writeFile
+The writeFile method overwrites the existing content of a file. If the file does not exist, it creates a new file. Any old data in the file is removed and replaced with new content.
+
+appendFile
+The appendFile method adds new content at the end of an existing file. It does not remove or overwrite the old data. If the file does not exist, it also creates a new file.
